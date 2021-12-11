@@ -6,7 +6,7 @@ import static java.lang.String.join;
 import static java.util.Collections.nCopies;
 
 public class Rome extends Arab {
-    public static int romanianToInteger(String romanianNumber)
+    public static int romanianToInteger(String romanianNumber)//перевод из римской системы в арабскую для вычислений
     {
         Map<Character, Integer> numbersMap = new HashMap<>();
         numbersMap.put('I', 1);
@@ -29,7 +29,7 @@ public class Rome extends Arab {
 
         return result;
     }
-    public static String getRomanNumber(int c) {
+    public static String getRomanNumber(int c) {//перевод из арабской в римскую для вывода результата
         return join("", nCopies(c, "I"))
                 .replace("IIIII", "V")
                 .replace("IIII", "IV")
@@ -40,7 +40,7 @@ public class Rome extends Arab {
                 .replace("LL", "C");
     }
 
-    public static String RomeCalculate(String oper, String num1, String num2) {
+    public static String RomeCalculate(String oper, String num1, String num2) {//обработка операции через арабскую обработку.
         int number = romanianToInteger(num1);
         int number2 = romanianToInteger(num2);
         int m = ArabCalculate(oper, number, number2);
